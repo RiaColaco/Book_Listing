@@ -36,7 +36,8 @@
               "node_modules/jquery/dist/jquery.js",
             "node_modules/datatables.net/js/jquery.dataTables.js"
             
-            ]
+            ],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -54,14 +55,7 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "buildOptimizer": true
             }
           }
         },
