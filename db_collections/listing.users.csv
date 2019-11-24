@@ -1,0 +1,6 @@
+"__v",_id,creation_dt,email,password,username
+0,5dd574b81d1f5314c8856a40,2019-11-20T17:15:36.864Z,mat@example.com,$2a$10$.b1dNuRUdluF7hb2Gqkayusufqrg74stW4BcoQxxezrpde.VAwXTu,Matt Dammon
+0,5dd818df4e3e611088065530,2019-11-22T17:20:31.844Z,ria@gmail.com,$2a$10$R6mmjPZ9f.M/7RsFipz.ZOkU3rzp/Es5awl7szjnkDNpI3pcT0oXu,ria
+0,5dd818e04e3e611088065531,2019-11-22T17:20:32.049Z,ria@gmail.com,$2a$10$p6gIkG/wYGi0CqzsEjhVxesRsV91YOi1eVanWc9vpcZFSoro3YkMK,ria
+0,5dda848f929d711774d6d849,2019-11-24T13:24:31.574Z,home@home.com,$2a$10$IS/dE03DJr4UfesVl.N2/eMIMyu5qOvZa/f5dX7OES8EIUGv6zdZ2,test
+0,5dda8e574d3caf114880392e,2019-11-24T14:06:15.067Z,testLink@test.com,$2a$10$5Ycjo4Lyj8W6zP0sqWO8q.fNAu8ev88.cD5Kw3Y/yl9p3l8DUgIhu,tester

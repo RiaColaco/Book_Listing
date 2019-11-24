@@ -18,5 +18,5 @@ App features included, login/signup and viewing a list on books upon login
 
 # DB configuration and installations
 1. Create a mongo database called "listing"
-2. Import the collections into the "listing" database from the collections folder present in the projects
+2. Import the collections into the "listing" database from the db_collections folder present in the projects
 
