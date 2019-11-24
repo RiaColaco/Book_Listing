@@ -37,15 +37,15 @@ export class UserhomeComponent implements OnInit {
   }
 
   title = 'angulardatatables';
-  dtOptions: DataTables.Settings = {};
+ // dtOptions: DataTables.Settings = {};
 
   ngOnInit() {
 
-    this.dtOptions = {
-      pagingType: 'full_numbers',
-      pageLength: 5,
-      processing: true
-    };
+    // this.dtOptions = {
+    //   pagingType: 'full_numbers',
+    //   pageLength: 5,
+    //   processing: true
+    // };
   }
 
   logout(){
