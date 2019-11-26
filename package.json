@@ -18,11 +18,11 @@
   "heroku-run-build-script": true,
   "private": true,
   "dependencies": {
-    "@angular/cli": "~8.0.3",
-    "@angular/compiler-cli": "~8.0.1",
     "@angular/animations": "~8.0.1",
+    "@angular/cli": "~8.0.3",
     "@angular/common": "~8.0.1",
     "@angular/compiler": "~8.0.1",
+    "@angular/compiler-cli": "~8.0.1",
     "@angular/core": "~8.0.1",
     "@angular/forms": "~8.0.1",
     "@angular/platform-browser": "~8.0.1",
@@ -30,6 +30,7 @@
     "@angular/router": "~8.0.1",
     "angular-datatables": "^8.0.0",
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "cheerio": "^1.0.0-rc.3",
     "connect-mongo": "^3.1.2",
@@ -56,8 +57,8 @@
     "passport-local": "^1.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
-    "zone.js": "~0.9.1",
-    "typescript": "~3.4.3"
+    "typescript": "~3.4.3",
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.800.0",
