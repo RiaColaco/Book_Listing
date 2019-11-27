@@ -29,19 +29,16 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if ((!this.registerForm.valid) || (this.registerForm.controls.password.value != this.registerForm.controls.cpass.value)) {
-      console.log("invalid form");
       return;
     }
     this._userService.register(JSON.stringify(this.registerForm.value))
     .subscribe(
       data => {
-        console.log(data);
         this.router.navigate(['/login']);
       },
       error =>{ console.error(error);
       }
     )
-    console.log("form", JSON.stringify(this.registerForm.value));
   }
 
 }

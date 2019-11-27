@@ -20,9 +20,9 @@ export class UserhomeComponent implements OnInit {
     private router: Router
   ) {
     this.user.user().subscribe(
-      data => {console.log(data);
+      data => {
         this.user.books().subscribe(
-          data => {console.log("book",data);
+          data => {
           this.bookData = data;
           
           },
@@ -50,7 +50,7 @@ export class UserhomeComponent implements OnInit {
 
   logout(){
     this.user.logout().subscribe(
-      data =>{console.log(data), this.router.navigate(['/login']);
+      data =>{ this.router.navigate(['/login']);
       },
       error =>console.error(error)
       
