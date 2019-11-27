@@ -60,8 +60,10 @@ app.use(cors({
   credentials: true
 }))
 
+const uri = "mongodb+srv://riacolaco:test123@cluster0-vwzlq.mongodb.net/booklisting?retryWrites=true&w=majority";
+const local = 'mongodb://localhost:27017/listing';
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/listing');
+mongoose.connect(uri);
 
 // passport
 var passport = require('passport');
