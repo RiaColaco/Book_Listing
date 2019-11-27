@@ -54,7 +54,9 @@
                         </div>
 
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"
-                            (click)="register()">Register</button>
+                            (click)="register()">Register
+                            <i
+                            class="fa fa-spinner fa-spin {{regloader ? '' : 'd-none'}}" id="spinner"></i></button>
                         <hr class="my-4">
                         <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
                                     class="fab fa-google mr-2"></i> Sign in with Google</button> -->

@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
 
   submitted = false;
   public regerr = null;
+  public regloader = false;
 
   registerForm = new FormGroup({
     email: new FormControl(null, [Validators.email, Validators.required]),
@@ -25,6 +26,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.regerr = null;
+    this.regloader = false;
   }
 
   // convenience getter for easy access to form fields
@@ -35,17 +37,21 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    this.regloader = true;
     this.regerr = null;
     this.submitted = true;
     if ((!this.registerForm.valid) || (this.registerForm.controls.password.value != this.registerForm.controls.cpass.value)) {
+      this.regloader = false;
       return;
     }
     this._userService.register(JSON.stringify(this.registerForm.value))
       .subscribe(
         data => {
+          this.regloader = false;
           this.router.navigate(['/login']);
         },
         error => {
+          this.regloader = false;
           console.error(error);
         }
       )

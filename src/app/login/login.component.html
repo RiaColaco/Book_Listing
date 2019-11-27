@@ -35,7 +35,8 @@
                 {{loginerr}}
               </div>
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="login()">Sign
-                in</button>
+                in<i
+                class="fa fa-spinner fa-spin {{loginloader ? '' : 'd-none'}}" id="spinner"></i></button>
               <hr class="my-4">
               <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
                 class="fab fa-google mr-2"></i> Sign in with Google</button> -->

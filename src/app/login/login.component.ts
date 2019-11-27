@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   submitted = false;
   public loginerr = null;
+  public loginloader = false;
 
   loginForm = new FormGroup({
     email: new FormControl(null, [Validators.email, Validators.required]),
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginerr = null;
+    this.loginloader = false;
     this.loginService.showLoggedIn(false);
   }
 
@@ -36,15 +38,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.loginloader = true;
     this.loginerr = null;
     this.submitted = true;
     if ((!this.loginForm.valid)) {
+      this.loginloader = false;
       return;
     }
     this._userService.login(JSON.stringify(this.loginForm.value))
       .subscribe(
-        data => { this.loginService.showLoggedIn(true); this.router.navigate(['/user']); },
-        error => { this.loginerr = error.error.message; console.error("err", error) }
+        data => { this.loginloader = false;this.loginService.showLoggedIn(true); this.router.navigate(['/user']); },
+        error => { this.loginloader = false;this.loginerr = error.error.message; console.error("err", error) }
       )
   }
 
