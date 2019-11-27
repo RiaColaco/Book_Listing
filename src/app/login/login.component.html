@@ -10,12 +10,25 @@
                 <input formControlName="email" type="email" id="inputEmail" class="form-control"
                   placeholder="Email address" required autofocus>
                 <label for="inputEmail">Email address</label>
+                <div *ngIf="submitted && f.email.errors" class="text-danger mt-2 pl-2">
+                <div *ngIf="f.email.errors.required">
+                  Email is required.
+                </div>
+                <div *ngIf="f.email.errors.email">
+                  Enter valid email.
+                </div>
+              </div>
               </div>
 
               <div class="form-label-group">
                 <input formControlName="password" type="password" id="inputPassword" class="form-control"
                   placeholder="Password" required>
                 <label for="inputPassword">Password</label>
+                <div *ngIf="submitted && f.password.errors" class="text-danger mt-2 pl-2">
+                  <div *ngIf="f.password.errors.required">
+                    Password is required.
+                  </div>
+                </div>
               </div>
 
 

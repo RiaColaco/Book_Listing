@@ -11,6 +11,8 @@ import { LoginService } from '../login.service';
 })
 export class LoginComponent implements OnInit {
 
+  submitted = false;
+
   loginForm = new FormGroup({
     email: new FormControl(null, [Validators.email, Validators.required]),
     password: new FormControl(null, Validators.required),
@@ -24,11 +26,15 @@ export class LoginComponent implements OnInit {
     this.loginService.showLoggedIn(false);
   }
 
+   // convenience getter for easy access to form fields
+   get f() { return this.loginForm.controls; }
+
   moverToRegister() {
     this.router.navigate(['/register']);
   }
 
   login() {
+    this.submitted = true;
     if ((!this.loginForm.valid)) {
       return;
     }
