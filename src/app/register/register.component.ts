@@ -10,6 +10,9 @@ import { UserService } from '../user.service';
 })
 export class RegisterComponent implements OnInit {
 
+  submitted = false;
+  public regerr = null;
+
   registerForm = new FormGroup({
     email: new FormControl(null, [Validators.email, Validators.required]),
     username: new FormControl(null, Validators.required),
@@ -18,27 +21,34 @@ export class RegisterComponent implements OnInit {
   })
 
   constructor(private router: Router,
-    private _userService:UserService) { }
+    private _userService: UserService) { }
 
   ngOnInit() {
+    this.regerr = null;
   }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.registerForm.controls; }
 
   moveToLogin() {
     this.router.navigate(['/login']);
   }
 
   register() {
+    this.regerr = null;
+    this.submitted = true;
     if ((!this.registerForm.valid) || (this.registerForm.controls.password.value != this.registerForm.controls.cpass.value)) {
       return;
     }
     this._userService.register(JSON.stringify(this.registerForm.value))
-    .subscribe(
-      data => {
-        this.router.navigate(['/login']);
-      },
-      error =>{ console.error(error);
-      }
-    )
+      .subscribe(
+        data => {
+          this.router.navigate(['/login']);
+        },
+        error => {
+          console.error(error);
+        }
+      )
   }
 
 }

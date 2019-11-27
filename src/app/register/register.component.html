@@ -10,24 +10,47 @@
                             <input formControlName="email" type="email" id="inputEmail" class="form-control"
                                 placeholder="Email address" required autofocus>
                             <label for="inputEmail">Email address</label>
+                            <div *ngIf="submitted && f.email.errors" class="text-danger mt-2 pl-2">
+                                <div *ngIf="f.email.errors.required">
+                                  Email is required.
+                                </div>
+                                <div *ngIf="f.email.errors.email">
+                                  Enter valid email.
+                                </div>
+                              </div>
                         </div>
 
                         <div class="form-label-group">
                             <input formControlName="username" type="text" id="inputName" class="form-control"
                                 placeholder="User Name" required autofocus>
                             <label for="inputName">User Name</label>
+                            <div *ngIf="submitted && f.username.errors" class="text-danger mt-2 pl-2">
+                                <div *ngIf="f.username.errors.required">
+                                  Username is required.
+                                </div>
+                              </div>
                         </div>
 
                         <div class="form-label-group">
                             <input formControlName="password" type="password" id="inputPassword" class="form-control"
                                 placeholder="Password" required>
                             <label for="inputPassword">Password</label>
+                            <div *ngIf="submitted && f.password.errors" class="text-danger mt-2 pl-2">
+                                <div *ngIf="f.password.errors.required">
+                                  Password is required.
+                                </div>
+                              </div>
                         </div>
 
                         <div class="form-label-group">
                             <input formControlName="cpass" type="password" id="inputCPassword" class="form-control"
                                 placeholder="Confirm Password" required>
                             <label for="inputCPassword">Confirm Password</label>
+                            <div *ngIf="submitted && f.cpass.errors" class="text-danger mt-2 pl-2">
+                                <div *ngIf="f.cpass.errors.required">
+                                  Confirm password is required.
+                                </div>
+                              </div>
                         </div>
 
                         <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"
