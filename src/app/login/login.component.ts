@@ -12,6 +12,7 @@ import { LoginService } from '../login.service';
 export class LoginComponent implements OnInit {
 
   submitted = false;
+  public loginerr = null;
 
   loginForm = new FormGroup({
     email: new FormControl(null, [Validators.email, Validators.required]),
@@ -23,26 +24,28 @@ export class LoginComponent implements OnInit {
     private loginService: LoginService) { }
 
   ngOnInit() {
+    this.loginerr = null;
     this.loginService.showLoggedIn(false);
   }
 
-   // convenience getter for easy access to form fields
-   get f() { return this.loginForm.controls; }
+  // convenience getter for easy access to form fields
+  get f() { return this.loginForm.controls; }
 
   moverToRegister() {
     this.router.navigate(['/register']);
   }
 
   login() {
+    this.loginerr = null;
     this.submitted = true;
     if ((!this.loginForm.valid)) {
       return;
     }
     this._userService.login(JSON.stringify(this.loginForm.value))
-    .subscribe(
-      data => {this.loginService.showLoggedIn(true);this.router.navigate(['/user']);},
-      error => console.error(error)
-    )
+      .subscribe(
+        data => { this.loginService.showLoggedIn(true); this.router.navigate(['/user']); },
+        error => { this.loginerr = error.error.message; console.error("err", error) }
+      )
   }
 
 }
