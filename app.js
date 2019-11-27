@@ -92,7 +92,7 @@ app.use(passport.session());
 app.get('/auth/facebook/callback',
   passport.authenticate('facebook', {
     failureRedirect: '/users/login',
-    successRedirect: '/users/user',
+    successRedirect: '/user',
   }));
 
 app.get('/auth/facebook',
