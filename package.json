@@ -37,7 +37,7 @@
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "custom-hash": "^0.9.0",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.10.20",
     "debug": "~2.6.9",
     "express": "~4.16.1",
